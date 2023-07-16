@@ -2,8 +2,16 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
+import { Container } from "@mui/material";
 import type { LinksFunction, V2_MetaFunction } from "@remix-run/node";
-import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react";
+import {
+  Links,
+  LiveReload,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+} from "@remix-run/react";
 import type { PropsWithChildren } from "react";
 
 export const links: LinksFunction = () => [];
@@ -23,10 +31,12 @@ function Document({ children, title }: PropsWithChildren<{ title?: string }>) {
         <Links />
       </head>
       <body>
-        {children}
-        <Scripts />
-        <ScrollRestoration/>
-        <LiveReload />
+        <Container maxWidth="lg">
+          {children}
+          <Scripts />
+          <ScrollRestoration />
+          <LiveReload />
+        </Container>
       </body>
     </html>
   );
