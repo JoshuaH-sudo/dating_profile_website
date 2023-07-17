@@ -1,7 +1,7 @@
 import { Box, Paper } from "@mui/material";
 import { Link } from "@remix-run/react";
 import { motion } from "framer-motion";
-import type { FC, PropsWithChildren } from "react";
+import type { FC } from "react";
 
 const NavigationImages = () => {
   return (
@@ -19,62 +19,50 @@ const NavigationImages = () => {
         minHeight: 0,
       }}
     >
-      <Box sx={{ gridArea: "about" }}>
-        <NavigationTitle link="about">
-          <img
-            alt="about page link"
-            style={{ width: "100%", height: "100%" }}
-            src="https://i.kym-cdn.com/entries/icons/original/000/031/015/cover5.jpg"
-          />
-        </NavigationTitle>
-      </Box>
+      <NavigationTitle
+        name="about"
+        image_src="https://i.kym-cdn.com/entries/icons/original/000/031/015/cover5.jpg"
+      />
 
-      <Box sx={{ gridArea: "skills" }}>
-        <NavigationTitle link="skills">
-          <img
-            alt="skills page link"
-            style={{ width: "100%", height: "100%" }}
-            src="https://i.kym-cdn.com/entries/icons/original/000/031/015/cover5.jpg"
-          />
-        </NavigationTitle>
-      </Box>
+      <NavigationTitle
+        name="skills"
+        image_src="https://i.kym-cdn.com/entries/icons/original/000/031/015/cover5.jpg"
+      />
 
-      <Box sx={{ gridArea: "gallery" }}>
-        <NavigationTitle link="gallery">
-          <img
-            alt="gallery page link"
-            style={{ width: "100%", height: "100%" }}
-            src="https://i.kym-cdn.com/entries/icons/original/000/031/015/cover5.jpg"
-          />
-        </NavigationTitle>
-      </Box>
+      <NavigationTitle
+        name="gallery"
+        image_src="https://i.kym-cdn.com/entries/icons/original/000/031/015/cover5.jpg"
+      />
 
-      <Box sx={{ gridArea: "contact" }}>
-        <NavigationTitle link="contact">
-          <img
-            alt="contact page link"
-            style={{ width: "100%", height: "100%" }}
-            src="https://i.kym-cdn.com/entries/icons/original/000/031/015/cover5.jpg"
-          />
-        </NavigationTitle>
-      </Box>
+      <NavigationTitle
+        name="contact"
+        image_src="https://i.kym-cdn.com/entries/icons/original/000/031/015/cover5.jpg"
+      />
     </Box>
   );
 };
 
-interface NavigationTitleProps extends PropsWithChildren {
-  link: string;
+interface NavigationTitleProps {
+  name: string;
+  image_src: string;
 }
-const NavigationTitle: FC<NavigationTitleProps> = ({ children, link }) => (
-  <Link to={link}>
-    <motion.div
-      whileHover={{ scale: 1.2 }}
-      onHoverStart={(e) => {}}
-      onHoverEnd={(e) => {}}
-    >
-      <Paper elevation={3}>{children}</Paper>
-    </motion.div>
-  </Link>
+const NavigationTitle: FC<NavigationTitleProps> = ({ name, image_src }) => (
+  <Box sx={{ gridArea: name }}>
+    <Link to={name}>
+      <motion.div
+        whileHover={{ scale: 1.2 }}
+        transition={{ type: "spring", stiffness: 400, damping: 25 }}
+      >
+        <Paper elevation={3}>
+          <img
+            alt={`${name} page link`}
+            style={{ width: "100%", height: "100%" }}
+            src={image_src}
+          />
+        </Paper>
+      </motion.div>
+    </Link>
+  </Box>
 );
 
 export default NavigationImages;
