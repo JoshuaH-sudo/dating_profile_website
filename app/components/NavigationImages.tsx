@@ -1,7 +1,7 @@
 import { Box, Paper } from "@mui/material";
 import { Link } from "@remix-run/react";
 import { motion } from "framer-motion";
-import { FC, PropsWithChildren } from "react";
+import type { FC, PropsWithChildren } from "react";
 
 const NavigationImages = () => {
   return (
