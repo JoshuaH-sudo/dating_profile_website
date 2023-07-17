@@ -1,9 +1,6 @@
-import NavigationImages from "~/components/NavigationImages";
+import { redirect } from "@remix-run/node";
 
-export default function IndexRoute() {
-  return (
-    <div>
-      <NavigationImages />
-    </div>
-  );
-}
+export const loader = () => {
+  return redirect(`/home`);
+};
+export default function IndexRoute() {}

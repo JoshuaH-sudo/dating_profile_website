@@ -1,8 +1,7 @@
 import { Box } from "@mui/material";
-import { useNavigate } from "@remix-run/react";
+import { Link } from "@remix-run/react";
 
 const NavigationImages = () => {
-  const navigate = useNavigate();
   return (
     <Box
       sx={{
@@ -18,36 +17,40 @@ const NavigationImages = () => {
       }}
     >
       <Box sx={{ gridArea: "about", bgcolor: "primary.main" }}>
-        <img
-          alt="about page link"
-          onClick={() => navigate("/about")}
-          style={{ width: "100%", height: "100%" }}
-          src="https://i.kym-cdn.com/entries/icons/original/000/031/015/cover5.jpg"
-        />
+        <Link to="about">
+          <img
+            alt="about page link"
+            style={{ width: "100%", height: "100%" }}
+            src="https://i.kym-cdn.com/entries/icons/original/000/031/015/cover5.jpg"
+          />
+        </Link>
       </Box>
       <Box sx={{ gridArea: "skills", bgcolor: "primary.main" }}>
-        <img
-          alt="skills page link"
-          onClick={() => navigate("/skills")}
-          style={{ width: "100%", height: "100%" }}
-          src="https://www.mypokecard.com/my/galery/1MaKOYuM6vwp.jpg"
-        />
+        <Link to="skills">
+          <img
+            alt="skills page link"
+            style={{ width: "100%", height: "100%" }}
+            src="https://www.mypokecard.com/my/galery/1MaKOYuM6vwp.jpg"
+          />
+        </Link>
       </Box>
       <Box sx={{ gridArea: "gallery", bgcolor: "primary.main" }}>
-        <img
-          alt="gallery page link"
-          onClick={() => navigate("/gallery")}
-          style={{ width: "100%", height: "100%" }}
-          src="https://www.mypokecard.com/my/galery/1MaKOYuM6vwp.jpg"
-        />
+        <Link to="gallery">
+          <img
+            alt="gallery page link"
+            style={{ width: "100%", height: "100%" }}
+            src="https://www.mypokecard.com/my/galery/1MaKOYuM6vwp.jpg"
+          />
+        </Link>
       </Box>
       <Box sx={{ gridArea: "contact", bgcolor: "primary.main" }}>
-        <img
-          alt="contact page link"
-          onClick={() => navigate("/contact")}
-          style={{ width: "100%", height: "100%" }}
-          src="https://i.kym-cdn.com/entries/icons/original/000/031/015/cover5.jpg"
-        />
+        <Link to="contact">
+          <img
+            alt="contact page link"
+            style={{ width: "100%", height: "100%" }}
+            src="https://i.kym-cdn.com/entries/icons/original/000/031/015/cover5.jpg"
+          />
+        </Link>
       </Box>
     </Box>
   );
