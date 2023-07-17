@@ -30,8 +30,8 @@ function Document({ children, title }: PropsWithChildren<{ title?: string }>) {
         {title ? <title>{title}</title> : null}
         <Links />
       </head>
-      <body>
-        <Container maxWidth="lg">
+      <body style={{ height: "100vh", margin: "unset" }}>
+        <Container maxWidth="lg" sx={{ height: "100%" }}>
           {children}
           <Scripts />
           <ScrollRestoration />

@@ -7,8 +7,8 @@ export default function IndexRoute() {
   return (
     <>
       <Header />
-      <div>
-        <NavigationImages />
+      <NavigationImages />
+      <div style={{paddingTop: "1em"}}>
         <motion.main
           key={useLocation().pathname}
           initial={{ y: "-20%", opacity: 0 }}
