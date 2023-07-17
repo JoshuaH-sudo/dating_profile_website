@@ -1,7 +1,8 @@
-import { Box, Paper } from "@mui/material";
+import { Box, Chip, Paper } from "@mui/material";
 import { Link } from "@remix-run/react";
 import { motion } from "framer-motion";
 import type { FC } from "react";
+import { capitalize } from "~/utils/tools";
 
 const NavigationImages = () => {
   return (
@@ -50,14 +51,28 @@ const NavigationTitle: FC<NavigationTitleProps> = ({ name, image_src }) => (
   <Box sx={{ gridArea: name }}>
     <Link to={name}>
       <motion.div
+        style={{
+          position: "relative",
+        }}
         whileHover={{ scale: 1.2 }}
         transition={{ type: "spring", stiffness: 400, damping: 25 }}
       >
         <Paper elevation={3}>
           <img
             alt={`${name} page link`}
-            style={{ width: "100%", height: "100%" }}
+            style={{ width: "100%", height: "100%", position: "relative" }}
             src={image_src}
+          />
+          <Chip
+            sx={{
+              left: "50%",
+              top: "50%",
+              transform: "translate(-50%, -50%)",
+              position: "absolute",
+            }}
+            label={capitalize(name)}
+            clickable={true}
+            color="info"
           />
         </Paper>
       </motion.div>
