@@ -1,6 +1,7 @@
 import { Box, Paper } from "@mui/material";
 import { Link } from "@remix-run/react";
 import { motion } from "framer-motion";
+import { FC, PropsWithChildren } from "react";
 
 const NavigationImages = () => {
   return (
@@ -19,75 +20,61 @@ const NavigationImages = () => {
       }}
     >
       <Box sx={{ gridArea: "about" }}>
-        <Link to="about">
-          <motion.div
-            whileHover={{ scale: 1.2 }}
-            onHoverStart={(e) => {}}
-            onHoverEnd={(e) => {}}
-          >
-            <Paper elevation={3}>
-              <img
-                alt="about page link"
-                style={{ width: "100%", height: "100%" }}
-                src="https://i.kym-cdn.com/entries/icons/original/000/031/015/cover5.jpg"
-              />
-            </Paper>
-          </motion.div>
-        </Link>
+        <NavigationTitle link="about">
+          <img
+            alt="about page link"
+            style={{ width: "100%", height: "100%" }}
+            src="https://i.kym-cdn.com/entries/icons/original/000/031/015/cover5.jpg"
+          />
+        </NavigationTitle>
       </Box>
+
       <Box sx={{ gridArea: "skills" }}>
-        <Link to="skills">
-          <motion.div
-            whileHover={{ scale: 1.2 }}
-            onHoverStart={(e) => {}}
-            onHoverEnd={(e) => {}}
-          >
-            <Paper elevation={3}>
-              <img
-                alt="skills page link"
-                style={{ width: "100%", height: "100%" }}
-                src="https://i.kym-cdn.com/entries/icons/original/000/031/015/cover5.jpg"
-              />
-            </Paper>
-          </motion.div>
-        </Link>
+        <NavigationTitle link="skills">
+          <img
+            alt="skills page link"
+            style={{ width: "100%", height: "100%" }}
+            src="https://i.kym-cdn.com/entries/icons/original/000/031/015/cover5.jpg"
+          />
+        </NavigationTitle>
       </Box>
+
       <Box sx={{ gridArea: "gallery" }}>
-        <Link to="gallery">
-          <motion.div
-            whileHover={{ scale: 1.2 }}
-            onHoverStart={(e) => {}}
-            onHoverEnd={(e) => {}}
-          >
-            <Paper elevation={3}>
-              <img
-                alt="gallery page link"
-                style={{ width: "100%", height: "100%" }}
-                src="https://i.kym-cdn.com/entries/icons/original/000/031/015/cover5.jpg"
-              />
-            </Paper>
-          </motion.div>
-        </Link>
+        <NavigationTitle link="gallery">
+          <img
+            alt="gallery page link"
+            style={{ width: "100%", height: "100%" }}
+            src="https://i.kym-cdn.com/entries/icons/original/000/031/015/cover5.jpg"
+          />
+        </NavigationTitle>
       </Box>
+
       <Box sx={{ gridArea: "contact" }}>
-        <Link to="contact">
-          <motion.div
-            whileHover={{ scale: 1.2 }}
-            onHoverStart={(e) => {}}
-            onHoverEnd={(e) => {}}
-          >
-            <Paper elevation={3}>
-              <img
-                alt="contact page link"
-                style={{ width: "100%", height: "100%" }}
-                src="https://i.kym-cdn.com/entries/icons/original/000/031/015/cover5.jpg"
-              />
-            </Paper>
-          </motion.div>
-        </Link>
+        <NavigationTitle link="contact">
+          <img
+            alt="contact page link"
+            style={{ width: "100%", height: "100%" }}
+            src="https://i.kym-cdn.com/entries/icons/original/000/031/015/cover5.jpg"
+          />
+        </NavigationTitle>
       </Box>
     </Box>
   );
 };
+
+interface NavigationTitleProps extends PropsWithChildren {
+  link: string;
+}
+const NavigationTitle: FC<NavigationTitleProps> = ({ children, link }) => (
+  <Link to={link}>
+    <motion.div
+      whileHover={{ scale: 1.2 }}
+      onHoverStart={(e) => {}}
+      onHoverEnd={(e) => {}}
+    >
+      <Paper elevation={3}>{children}</Paper>
+    </motion.div>
+  </Link>
+);
 
 export default NavigationImages;
