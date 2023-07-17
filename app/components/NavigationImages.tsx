@@ -1,5 +1,6 @@
-import { Box } from "@mui/material";
+import { Box, Paper } from "@mui/material";
 import { Link } from "@remix-run/react";
+import { motion } from "framer-motion";
 
 const NavigationImages = () => {
   return (
@@ -10,46 +11,79 @@ const NavigationImages = () => {
         gridTemplateRows: "repeat(2, 1fr)",
         maxWidth: "100%",
         maxHeight: "100%",
+        gap: 2,
         gridTemplateAreas: `"about skills"
     "gallery contact"`,
         minWidth: 0,
         minHeight: 0,
       }}
     >
-      <Box sx={{ gridArea: "about", bgcolor: "primary.main" }}>
+      <Box sx={{ gridArea: "about" }}>
         <Link to="about">
-          <img
-            alt="about page link"
-            style={{ width: "100%", height: "100%" }}
-            src="https://i.kym-cdn.com/entries/icons/original/000/031/015/cover5.jpg"
-          />
+          <motion.div
+            whileHover={{ scale: 1.2 }}
+            onHoverStart={(e) => {}}
+            onHoverEnd={(e) => {}}
+          >
+            <Paper elevation={3}>
+              <img
+                alt="about page link"
+                style={{ width: "100%", height: "100%" }}
+                src="https://i.kym-cdn.com/entries/icons/original/000/031/015/cover5.jpg"
+              />
+            </Paper>
+          </motion.div>
         </Link>
       </Box>
-      <Box sx={{ gridArea: "skills", bgcolor: "primary.main" }}>
+      <Box sx={{ gridArea: "skills" }}>
         <Link to="skills">
-          <img
-            alt="skills page link"
-            style={{ width: "100%", height: "100%" }}
-            src="https://www.mypokecard.com/my/galery/1MaKOYuM6vwp.jpg"
-          />
+          <motion.div
+            whileHover={{ scale: 1.2 }}
+            onHoverStart={(e) => {}}
+            onHoverEnd={(e) => {}}
+          >
+            <Paper elevation={3}>
+              <img
+                alt="skills page link"
+                style={{ width: "100%", height: "100%" }}
+                src="https://i.kym-cdn.com/entries/icons/original/000/031/015/cover5.jpg"
+              />
+            </Paper>
+          </motion.div>
         </Link>
       </Box>
-      <Box sx={{ gridArea: "gallery", bgcolor: "primary.main" }}>
+      <Box sx={{ gridArea: "gallery" }}>
         <Link to="gallery">
-          <img
-            alt="gallery page link"
-            style={{ width: "100%", height: "100%" }}
-            src="https://www.mypokecard.com/my/galery/1MaKOYuM6vwp.jpg"
-          />
+          <motion.div
+            whileHover={{ scale: 1.2 }}
+            onHoverStart={(e) => {}}
+            onHoverEnd={(e) => {}}
+          >
+            <Paper elevation={3}>
+              <img
+                alt="gallery page link"
+                style={{ width: "100%", height: "100%" }}
+                src="https://i.kym-cdn.com/entries/icons/original/000/031/015/cover5.jpg"
+              />
+            </Paper>
+          </motion.div>
         </Link>
       </Box>
-      <Box sx={{ gridArea: "contact", bgcolor: "primary.main" }}>
+      <Box sx={{ gridArea: "contact" }}>
         <Link to="contact">
-          <img
-            alt="contact page link"
-            style={{ width: "100%", height: "100%" }}
-            src="https://i.kym-cdn.com/entries/icons/original/000/031/015/cover5.jpg"
-          />
+          <motion.div
+            whileHover={{ scale: 1.2 }}
+            onHoverStart={(e) => {}}
+            onHoverEnd={(e) => {}}
+          >
+            <Paper elevation={3}>
+              <img
+                alt="contact page link"
+                style={{ width: "100%", height: "100%" }}
+                src="https://i.kym-cdn.com/entries/icons/original/000/031/015/cover5.jpg"
+              />
+            </Paper>
+          </motion.div>
         </Link>
       </Box>
     </Box>
