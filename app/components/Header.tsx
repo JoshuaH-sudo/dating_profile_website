@@ -9,7 +9,7 @@ const Header = () => {
       <Grid container spacing={2}>
         <Grid xs={3}>
           <Link to="/">
-            <Chip label="Home" variant="outlined" clickable={true} />
+            <Chip label="Home" variant="filled" clickable={true} />
           </Link>
         </Grid>
         <Grid xs={9} />

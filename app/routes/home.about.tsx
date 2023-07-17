@@ -1,40 +1,38 @@
 import { Box } from "@mui/material";
-import { FC } from "react";
+import type { FC, PropsWithChildren } from "react";
 
 export default function AboutPage() {
   return (
     <Box
       sx={{
-        display: "grid",
-        gridTemplateColumns: "repeat(1, 1fr)",
-        maxWidth: "100%",
-        maxHeight: "100%",
-        gap: 2,
-        gridTemplateRows: 'auto',
-        gridTemplateAreas: `"whoami"
-        "job"
-        "likes"
-        "final_word"`,
-        minWidth: 0,
-        minHeight: 0,
+        width: "100%",
+        height: "100%",
       }}
     >
-      <TextArea gridArea="whoami" />
-      <TextArea gridArea="job" />
-      <TextArea gridArea="likes" />
-      <TextArea gridArea="final_world" />
+      <TextArea name="whoami" side="left" />
+      <TextArea name="job" side="right" />
+      <TextArea name="likes" side="left" />
+      <TextArea name="final_world" side="right" />
     </Box>
   );
 }
 
-interface TextAreaProps {
-  gridArea: string;
+interface TextAreaProps extends PropsWithChildren {
+  name: string;
+  side: "left" | "right";
 }
-const TextArea: FC<TextAreaProps> = ({ gridArea }) => (
+const TextArea: FC<TextAreaProps> = ({ name, side, children }) => (
   <Box
+    id={name}
     sx={{
-      gridArea: gridArea,
       outline: "solid",
+      height: "100%",
+      display: "flex",
+      justifyContent: side,
     }}
-  ></Box>
+  >
+    <Box sx={{ backgroundColor: "blue", height: "100%", width: "33.33%" }}>
+      {children}
+    </Box>
+  </Box>
 );

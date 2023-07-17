@@ -54,7 +54,7 @@ const NavigationTitle: FC<NavigationTitleProps> = ({ name, image_src }) => (
         style={{
           position: "relative",
         }}
-        whileHover={{ scale: 1.2 }}
+        whileHover={{ scale: 1.2, zIndex: 100 }}
         transition={{ type: "spring", stiffness: 400, damping: 25 }}
       >
         <Paper elevation={3}>

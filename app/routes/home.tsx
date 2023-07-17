@@ -8,17 +8,16 @@ export default function IndexRoute() {
     <>
       <Header />
       <NavigationImages />
-      <div style={{paddingTop: "1em"}}>
-        <motion.main
-          key={useLocation().pathname}
-          initial={{ y: "-20%", opacity: 0 }}
-          animate={{ y: "0", opacity: 1 }}
-          exit={{ y: "-20%", opacity: 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          <Outlet />
-        </motion.main>
-      </div>
+      <motion.main
+        key={useLocation().pathname}
+        style={{ height: "100vh", paddingTop: "1em" }}
+        initial={{ y: "-20%", opacity: 0 }}
+        animate={{ y: "0", opacity: 1 }}
+        exit={{ y: "-20%", opacity: 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        <Outlet />
+      </motion.main>
     </>
   );
 }
