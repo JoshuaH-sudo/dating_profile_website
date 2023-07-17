@@ -26,12 +26,12 @@ const TextArea: FC<TextAreaProps> = ({ name, side, children }) => (
     id={name}
     sx={{
       outline: "solid",
-      height: "100%",
+      height: "25%",
       display: "flex",
       justifyContent: side,
     }}
   >
-    <Box sx={{ backgroundColor: "blue", height: "100%", width: "33.33%" }}>
+    <Box sx={{ backgroundColor: "blue", width: "33.33%" }}>
       {children}
     </Box>
   </Box>
