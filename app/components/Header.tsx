@@ -1,22 +1,24 @@
-import { Chip, Grid } from "@mui/material";
+import { AppBar, Chip, Toolbar, styled } from "@mui/material";
 import { Link } from "@remix-run/react";
 
-const Header = () => {
+const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 
+const Header = () => {
   return (
     <>
-    <div id="header_nav" style={{ padding: "1.5em", position: "fixed", width: "100%", zIndex: 10000 }}>
-      <Grid container spacing={2}>
-        <Grid xs={3}>
-          <Link to="/">
+      <AppBar
+        position="fixed"
+        style={{
+          width: "100%",
+        }}
+      >
+        <Toolbar>
+          <Link to="/home">
             <Chip label="Home" variant="filled" clickable={true} />
           </Link>
-        </Grid>
-        <Grid xs={9} />
-      </Grid>
-    </div>
-
-    <div style={{ height: "3.5em" }}/>
+        </Toolbar>
+      </AppBar>
+      <Offset />
     </>
   );
 };
