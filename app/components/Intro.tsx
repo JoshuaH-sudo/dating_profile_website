@@ -1,7 +1,7 @@
-import { Box, Typography } from "@mui/material";
-import React from "react";
+import { Box, Typography, useTheme } from "@mui/material";
 
 const Intro = () => {
+  const theme = useTheme();
   return (
     <Box>
       <Box
@@ -13,10 +13,12 @@ const Intro = () => {
           alignItems: "center",
         }}
       >
-        <Typography variant="h3" color="#FFC700">
+        <Typography variant="h3" color={theme.palette.accent.main}>
           Joshua Hoban
         </Typography>
-        <Typography variant="caption" color="#FFF">"Yeet, Yoat, Yeetus"</Typography>
+        <Typography variant="subtitle1" color="#FFF">
+          "Yeet, Yoat, Yeetus"
+        </Typography>
       </Box>
     </Box>
   );

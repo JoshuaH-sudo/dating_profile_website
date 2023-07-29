@@ -1,13 +1,31 @@
 import { createTheme, type ThemeOptions } from "@mui/material";
+declare module "@mui/material/styles" {
+  interface Palette {
+    accent: Palette["primary"];
+  }
+
+  interface PaletteOptions {
+    accent: PaletteOptions["primary"];
+  }
+}
 
 const theme: ThemeOptions = {
   palette: {
     mode: "light",
     primary: {
-      main: "#0DC34E",
+      light: "#0DC34E",
+      main: "#139A43",
+      dark: "#1F763E",
     },
     secondary: {
-      main: "#3075AE",
+      light: "#3075AE",
+      main: "#30638E",
+      dark: "#2F5677",
+    },
+    accent: {
+      light: "#FFC700",
+      main: "#F5B700",
+      dark: "#D2A318",
     },
   },
   typography: {
@@ -44,6 +62,14 @@ const theme: ThemeOptions = {
       fontSize: "18",
       fontStyle: "normal",
       fontWeight: 700,
+      lineHeight: "normal",
+    },
+    subtitle1: {
+      textAlign: "center",
+      fontFamily: "Lexend Deca",
+      fontSize: "20px",
+      fontStyle: "normal",
+      fontWeight: 300,
       lineHeight: "normal",
     },
     fontFamily: "Lexend Deca",
