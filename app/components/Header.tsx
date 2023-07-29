@@ -19,10 +19,10 @@ const Header = () => {
           <Link to="/gallery">
             <Chip label="Gallery" variant="filled" clickable={true} />
           </Link>
-          <Link to="/home">
+          <Link to="/survey">
             <Chip label="Survey" variant="filled" clickable={true} />
           </Link>
-          <Link to="/home">
+          <Link to="/date">
             <Chip label="Date" variant="filled" clickable={true} />
           </Link>
         </Toolbar>
