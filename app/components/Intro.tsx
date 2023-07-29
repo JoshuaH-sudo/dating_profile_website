@@ -1,14 +1,25 @@
-import { Box } from '@mui/material'
-import React from 'react'
+import { Box, Typography } from "@mui/material";
+import React from "react";
 
 const Intro = () => {
   return (
     <Box>
-      <Box>
-        <h1>Joshua Hoban</h1>
+      <Box
+        sx={{
+          display: "flex",
+          width: "347px",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Typography variant="h3" color="#FFC700">
+          Joshua Hoban
+        </Typography>
+        <Typography variant="caption" color="#FFF">"Yeet, Yoat, Yeetus"</Typography>
       </Box>
     </Box>
-  )
-}
+  );
+};
 
-export default Intro
+export default Intro;

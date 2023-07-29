@@ -1,6 +1,6 @@
 import { Button, Grid } from "@mui/material";
 import { Link } from "@remix-run/react";
-import background_image from "~/../public/images/decorations/giga-chad-video-placeholder.png";
+import background_image from "~/images/decorations/giga-chad-video-placeholder.png";
 
 export default function Splash_page() {
   return (
