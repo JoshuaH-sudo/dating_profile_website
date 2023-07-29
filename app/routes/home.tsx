@@ -1,13 +1,11 @@
 import { Outlet, useLocation } from "@remix-run/react";
 import { motion } from "framer-motion";
 import Header from "~/components/Header";
-import NavigationImages from "~/components/NavigationImages";
 
-export default function IndexRoute() {
+export default function Home_page_layout() {
   return (
     <>
       <Header />
-      <NavigationImages />
       <motion.main
         key={useLocation().pathname}
         style={{ height: "100vh", paddingTop: "1em" }}
@@ -16,7 +14,7 @@ export default function IndexRoute() {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.3 }}
       >
-        <Outlet />
+        <Outlet/>
       </motion.main>
     </>
   );

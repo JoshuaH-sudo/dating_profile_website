@@ -1,7 +1,9 @@
+import Intro from "~/components/Intro";
+
 export default function IndexRoute() {
   return (
     <div>
-      <h1>Welcome</h1>
+      <Intro />
     </div>
   );
 }

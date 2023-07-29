@@ -12,9 +12,18 @@ const Header = () => {
           width: "100%",
         }}
       >
-        <Toolbar>
+        <Toolbar sx={{ justifyContent: "space-around"}}>
           <Link to="/home">
             <Chip label="Home" variant="filled" clickable={true} />
+          </Link>
+          <Link to="/gallery">
+            <Chip label="Gallery" variant="filled" clickable={true} />
+          </Link>
+          <Link to="/home">
+            <Chip label="Survey" variant="filled" clickable={true} />
+          </Link>
+          <Link to="/home">
+            <Chip label="Date" variant="filled" clickable={true} />
           </Link>
         </Toolbar>
       </AppBar>
