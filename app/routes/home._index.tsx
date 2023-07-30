@@ -3,7 +3,7 @@ import Intro from "~/components/Intro";
 import Background_image from "~/components/UI/Background_image";
 import home_page_image from "~/images/layouts/home-background-image.png";
 
-export default function IndexRoute() {
+export default function Index_route() {
   return (
     <>
       <Background_image

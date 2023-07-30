@@ -9,10 +9,11 @@ const Header = () => {
       <AppBar
         position="fixed"
         style={{
-          width: "100%",
+          left: 0,
+          width: "100vw",
         }}
       >
-        <Toolbar sx={{ justifyContent: "space-around"}}>
+        <Toolbar sx={{ justifyContent: "space-around" }}>
           <Link to="/home">
             <Chip label="Home" variant="filled" clickable={true} />
           </Link>
