@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
-import About from "~/components/About";
+import About from "~/components/sections/About";
 import Divider from "~/components/Divider";
-import Intro from "~/components/Intro";
+import Intro from "~/components/sections/Intro";
 import Background_image from "~/components/UI/Background_image";
 import home_page_image from "~/images/layouts/home-background-image.png";
 
