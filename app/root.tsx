@@ -31,8 +31,8 @@ function Document({ children, title }: PropsWithChildren<{ title?: string }>) {
         {title ? <title>{title}</title> : null}
         <Links />
       </head>
-      <body style={{ height: "100vh", margin: "unset" }}>
-        <Container maxWidth="lg" sx={{ height: "100%" }}>
+      <body style={{ height: "100vh", margin: "unset", padding: 0 }}>
+        <Container maxWidth={false} style={{ height: "100%", padding: 0, overflowX: "hidden" }}>
           {children}
           <Scripts />
           <ScrollRestoration />

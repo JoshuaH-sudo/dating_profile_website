@@ -21,7 +21,7 @@ const Background_image: FC<Background_image_props> = ({
         top: 0,
         left: 0,
         width: "100vw",
-        height: "100vh",
+        height: "100%",
         zIndex: -1000,
         ...style_props,
       }}

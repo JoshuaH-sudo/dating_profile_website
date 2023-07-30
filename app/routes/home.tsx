@@ -8,7 +8,7 @@ export default function Home_page_layout() {
       <Header />
       <motion.main
         key={useLocation().pathname}
-        style={{ height: "100vh", paddingTop: "1em" }}
+        style={{ height: "100%" }}
         initial={{ opacity: 0 }}
         animate={{ y: "0", opacity: 1 }}
         exit={{ opacity: 0 }}
