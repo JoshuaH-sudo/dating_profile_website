@@ -1,16 +1,16 @@
-import { AppBar, Chip, Toolbar, styled } from "@mui/material";
+import { AppBar, Chip, Toolbar } from "@mui/material";
 import { Link } from "@remix-run/react";
-
-const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 
 const Header = () => {
   return (
     <>
       <AppBar
         position="fixed"
+        color="transparent"
         style={{
           left: 0,
           width: "100vw",
+          boxShadow: "revert"
         }}
       >
         <Toolbar sx={{ justifyContent: "space-around" }}>
@@ -28,7 +28,6 @@ const Header = () => {
           </Link>
         </Toolbar>
       </AppBar>
-      <Offset />
     </>
   );
 };

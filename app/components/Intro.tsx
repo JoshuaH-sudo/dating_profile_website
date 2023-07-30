@@ -11,7 +11,7 @@ const Intro = () => {
       style={{
         margin: "auto",
         display: "flex",
-        height: "32rem",
+        height: "100%",
         width: "347px",
         flexDirection: "column",
         justifyContent: "center",
