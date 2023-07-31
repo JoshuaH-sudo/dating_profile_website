@@ -7,6 +7,7 @@ const List: FC<PropsWithChildren> = ({ children }) => {
       spacing={{ xs: 2, sm: 2, md: 4 }}
       divider={<Divider orientation="horizontal" flexItem />}
       direction={"column"}
+      padding="1rem"
     >
       {children}
     </Stack>
@@ -44,13 +45,16 @@ const Item: FC<Item_props> = ({ image_side, image_src, title, children }) => {
       justifyContent="space-between"
       alignItems="center"
       spacing={2}
-      padding="1rem"
     >
       {image_side === "left" && image_display}
 
       <Grid item xs={6} alignSelf="flex-start">
-        <Typography variant="h4" color={theme.palette.accent.light}>{title}</Typography>
-        <Typography variant="body1" color="white">{children}</Typography>
+        <Typography variant="h4" color={theme.palette.accent.light}>
+          {title}
+        </Typography>
+        <Typography variant="body1" color="white">
+          {children}
+        </Typography>
       </Grid>
 
       {image_side === "right" && image_display}
