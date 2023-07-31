@@ -5,6 +5,8 @@ module.exports = {
   // assetsBuildDirectory: "public/build",
   // serverBuildPath: "build/index.js",
   // publicPath: "/build/",
+  server: process.env.NODE_ENV === "development" ? undefined : "./server.ts",
+  serverBuildPath: "api/index.js",
   serverModuleFormat: "cjs",
   future: {
     v2_dev: true,
