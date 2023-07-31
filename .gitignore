@@ -1,9 +1,6 @@
-.DS_Store
 node_modules
 
 /.cache
-/build
 /public/build
+/.netlify
 .env
-
-/prisma/dev.db
