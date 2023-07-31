@@ -21,7 +21,7 @@ const Divider = () => {
         alignItems="center"
         padding="15px"
       >
-        <Grid item xs={11}>
+        <Grid item xs={11} textAlign="end">
           <Typography variant="h4" color="white">
             {"Send memes here ->"}
           </Typography>
