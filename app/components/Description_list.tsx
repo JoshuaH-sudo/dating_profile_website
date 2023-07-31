@@ -1,48 +1,59 @@
-import { Grid } from "@mui/material";
+import { Divider, Grid, Stack, Typography, useTheme } from "@mui/material";
 import type { FC, PropsWithChildren } from "react";
-import me_image_src from "~/images/me/headshot.jpg";
 
 const List: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <Grid
-      container
-      justifyContent="center"
-      alignItems="center"
-      direction="column"
-      spacing={3}
-      style={{
-        height: "100%"
-      }}
+    <Stack
+      spacing={{ xs: 2, sm: 2, md: 4 }}
+      divider={<Divider orientation="horizontal" flexItem />}
+      direction={"column"}
     >
       {children}
-    </Grid>
+    </Stack>
   );
 };
 
-const Item: FC = () => {
+interface Item_props extends PropsWithChildren {
+  image_side: "left" | "right";
+  image_src: string;
+  title: string;
+}
+
+const Item: FC<Item_props> = ({ image_side, image_src, title, children }) => {
+  const theme = useTheme();
+
+  const image_display = (
+    <Grid item xs={6}>
+      <img
+        src={image_src}
+        alt="description_image"
+        style={{
+          height: "40vw",
+          width: "40vw",
+          fill: "#ACACAC",
+          filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
+          borderRadius: "10px",
+        }}
+      />
+    </Grid>
+  );
+
   return (
-    <Grid container justifyContent="center" alignItems="center">
-      <Grid xs={6}>
-        <img
-          src={me_image_src}
-          alt="description_image"
-          style={{
-            height: "200px",
-            width: "200px",
-          }}
-        />
+    <Grid
+      container
+      justifyContent="space-between"
+      alignItems="center"
+      spacing={2}
+      padding="1rem"
+    >
+      {image_side === "left" && image_display}
+
+      <Grid item xs={6} alignSelf="flex-start">
+        <Typography variant="h4" color={theme.palette.accent.light}>{title}</Typography>
+        <Typography variant="body1" color="white">{children}</Typography>
       </Grid>
 
-      <Grid xs={6}>
-        <img
-          src={me_image_src}
-          alt="description_image"
-          style={{
-            height: "200px",
-            width: "200px",
-          }}
-        />
-      </Grid>
+      {image_side === "right" && image_display}
     </Grid>
   );
 };
