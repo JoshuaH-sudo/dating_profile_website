@@ -1,6 +1,14 @@
 import { Button, Grid } from "@mui/material";
+import type { V2_MetaFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
 import background_image from "~/images/decorations/giga-chad-video-placeholder.png";
+
+export const meta: V2_MetaFunction = () => {
+  return [
+    { title: "New Remix App" },
+    { name: "description", content: "Welcome to Remix!" },
+  ];
+};
 
 export default function Splash_page() {
   return (
