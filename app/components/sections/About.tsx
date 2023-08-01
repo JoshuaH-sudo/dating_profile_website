@@ -10,7 +10,6 @@ const About = () => {
   return (
     <Box
       style={{
-        height: "100%",
         backgroundColor: theme.palette.secondary.main,
       }}
     >

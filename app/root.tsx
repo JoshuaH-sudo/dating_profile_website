@@ -15,8 +15,6 @@ import {
 import type { PropsWithChildren } from "react";
 import { main_theme } from "./themes/main";
 
-export const links: LinksFunction = () => [];
-
 export const meta: V2_MetaFunction = () => {
   return [{ title: "Joshy's Website" }];
 };
@@ -32,7 +30,10 @@ function Document({ children, title }: PropsWithChildren<{ title?: string }>) {
         <Links />
       </head>
       <body style={{ height: "100vh", margin: "unset", padding: 0 }}>
-        <Container maxWidth={false} style={{ height: "100%", padding: 0, overflowX: "hidden" }}>
+        <Container
+          maxWidth={false}
+          style={{ height: "100%", padding: 0, overflowX: "hidden" }}
+        >
           {children}
           <Scripts />
           <ScrollRestoration />
