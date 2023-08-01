@@ -1,4 +1,4 @@
-import { Divider, Grid, Stack, Typography, useTheme } from "@mui/material";
+import { Box, Divider, Grid, Stack, Typography, useTheme } from "@mui/material";
 import type { FC, PropsWithChildren } from "react";
 
 const List: FC<PropsWithChildren> = ({ children }) => {
@@ -24,7 +24,7 @@ const Item: FC<Item_props> = ({ image_side, image_src, title, children }) => {
   const theme = useTheme();
 
   const image_display = (
-    <Grid item xs={6}>
+    <Box>
       <img
         src={image_src}
         alt="description_image"
@@ -36,29 +36,34 @@ const Item: FC<Item_props> = ({ image_side, image_src, title, children }) => {
           borderRadius: "10px",
         }}
       />
-    </Grid>
+    </Box>
   );
 
   return (
-    <Grid
-      container
-      justifyContent="space-between"
-      alignItems="center"
-      spacing={2}
+    <Box
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        gap: "2rem",
+      }}
     >
       {image_side === "left" && image_display}
 
-      <Grid item xs={6} alignSelf="flex-start">
+      <Box
+        style={{
+          width: "100%",
+        }}
+      >
         <Typography variant="h4" color={theme.palette.accent.light}>
           {title}
         </Typography>
         <Typography variant="body1" color="white">
           {children}
         </Typography>
-      </Grid>
+      </Box>
 
       {image_side === "right" && image_display}
-    </Grid>
+    </Box>
   );
 };
 
