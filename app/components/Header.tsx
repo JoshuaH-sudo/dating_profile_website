@@ -17,13 +17,13 @@ const Header = () => {
           <Link to="/home">
             <Chip label="Home" variant="filled" clickable={true} />
           </Link>
-          <Link to="/gallery">
+          <Link to="/home/gallery">
             <Chip label="Gallery" variant="filled" clickable={true} />
           </Link>
-          <Link to="/survey">
+          <Link to="/home/survey">
             <Chip label="Survey" variant="filled" clickable={true} />
           </Link>
-          <Link to="/date">
+          <Link to="/home/date">
             <Chip label="Date" variant="filled" clickable={true} />
           </Link>
         </Toolbar>
