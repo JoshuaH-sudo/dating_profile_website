@@ -2,10 +2,12 @@ import { createTheme, type ThemeOptions } from "@mui/material";
 declare module "@mui/material/styles" {
   interface Palette {
     accent: Palette["primary"];
+    hard_accent: Palette["primary"];
   }
 
   interface PaletteOptions {
     accent: PaletteOptions["primary"];
+    hard_accent: PaletteOptions["primary"];
   }
 }
 
@@ -26,6 +28,11 @@ const theme: ThemeOptions = {
       light: "#FFC700",
       main: "#F5B700",
       dark: "#D2A318",
+    },
+    hard_accent: {
+      light: "#B20642",
+      main: "#820933",
+      dark: "#66122F",
     },
   },
   typography: {

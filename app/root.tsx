@@ -19,6 +19,7 @@ export const meta: V2_MetaFunction = () => {
   return [{ title: "Joshy's Website" }];
 };
 
+
 function Document({ children, title }: PropsWithChildren<{ title?: string }>) {
   return (
     <html lang="en">

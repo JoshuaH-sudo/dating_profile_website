@@ -8,22 +8,23 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@netlify/functions": "^1.4.0",
-    "@remix-run/css-bundle": "^1.19.1",
-    "@remix-run/netlify": "^1.19.1",
-    "@remix-run/node": "^1.19.1",
-    "@remix-run/react": "^1.19.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@fontsource/roboto": "^5.0.5",
     "@mui/icons-material": "^5.14.1",
     "@mui/material": "^5.14.0",
+    "@netlify/functions": "^1.4.0",
     "@prisma/client": "^5.0.0",
+    "@remix-run/css-bundle": "^1.19.1",
+    "@remix-run/netlify": "^1.19.1",
+    "@remix-run/node": "^1.19.1",
+    "@remix-run/react": "^1.19.1",
     "cross-env": "^7.0.3",
     "framer-motion": "^10.12.21",
     "isbot": "^3.6.8",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "survey-react-ui": "^1.9.100"
   },
   "devDependencies": {
     "@remix-run/dev": "^1.19.1",

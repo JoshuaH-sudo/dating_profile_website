@@ -16,6 +16,7 @@ export const loader: LoaderFunction = async () => {
         file_name,
       };
     })
+    // Add some randomness to the images
     .sort(() => 0.5 - Math.random());
 
   return image_map;
