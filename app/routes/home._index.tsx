@@ -3,25 +3,8 @@ import About from "~/components/sections/About";
 import Divider from "~/components/Divider";
 import Intro from "~/components/sections/Intro";
 import home_page_image from "~/images/layouts/home-background-image.png";
-import { useEffect } from "react";
 
 export default function Index_route() {
-  // Add a scroll event listener to handle the parallax effect
-  const handleParallaxScroll = () => {
-    const parallaxImage = document.querySelector("#intro-image");
-    if (parallaxImage) {
-      const scrolled = window.scrollY;
-      parallaxImage.style.transform = `translate3d(0, ${scrolled * 0.4}px, 0)`;
-    }
-  };
-
-  // Attach the scroll event listener when the component mounts
-  useEffect(() => {
-    window.addEventListener("scroll", handleParallaxScroll);
-    return () => {
-      window.removeEventListener("scroll", handleParallaxScroll);
-    };
-  }, []);
 
   return (
     <>

@@ -1,5 +1,5 @@
 import { Box, Typography, useTheme } from "@mui/material";
-import head_shot from "~/images/me/headshot.jpg";
+import head_shot from "~/images/decorations/headshot.jpg";
 import soyface_overlay_src from "~/images/decorations/soyface-wojak.png";
 import will_smith_presents_src from "~/images/decorations/will-smith-presents.png";
 

@@ -1,6 +1,6 @@
 import { Box, styled, useTheme } from "@mui/material";
 import { Description_list } from "../Description_list";
-import me_image_src from "~/images/me/headshot.jpg";
+import me_image_src from "~/images/decorations/headshot.jpg";
 
 const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 
