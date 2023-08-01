@@ -48,6 +48,7 @@ export default function Index_route() {
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             backgroundImage: `url('${home_page_image}')`,
+            filter: "blur(5px)"
           }}
         />
         <Box
