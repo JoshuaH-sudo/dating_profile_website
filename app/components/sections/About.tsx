@@ -11,6 +11,7 @@ const About = () => {
     <Box
       style={{
         backgroundColor: theme.palette.secondary.main,
+        minHeight: "100%",
       }}
     >
       <Offset style={{ backgroundColor: theme.palette.primary.main }} />
