@@ -3,6 +3,11 @@ import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
 import { Link } from "@remix-run/react";
 import type { FC } from "react";
 import CountUp from "react-countup";
+
+import pepe_love_src from "~/images/decorations/pepe-love.png";
+import jake_src from "~/images/decorations/jake.png";
+import harold_src from "~/images/decorations/harold.png";
+
 interface Survey_complete {
   compatibility: number;
 }
@@ -10,7 +15,11 @@ const Survey_complete: FC<Survey_complete> = ({ compatibility }) => {
   const theme = useTheme();
 
   const score_display = (
-    <Box>
+    <Box
+      style={{
+        zIndex: 1,
+      }}
+    >
       <Typography variant="h4" textAlign="left">
         Score
       </Typography>
@@ -52,6 +61,7 @@ const Survey_complete: FC<Survey_complete> = ({ compatibility }) => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        zIndex: 1,
       }}
     >
       <IconButton
@@ -83,6 +93,56 @@ const Survey_complete: FC<Survey_complete> = ({ compatibility }) => {
     </Box>
   );
 
+  const image_backgrounds = (
+    <Box
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        filter: "blur(2px)",
+        height: "100%",
+        width: "100%",
+        overflow: "hidden",
+      }}
+    >
+      <img
+        alt="pepe-love"
+        src={pepe_love_src}
+        style={{
+          position: "absolute",
+          width: "12.875rem",
+          height: "12.875rem",
+          top: "2rem",
+          left: "-5.7rem",
+        }}
+      />
+
+      <img
+        alt="jake"
+        src={jake_src}
+        style={{
+          position: "absolute",
+          width: "12.875rem",
+          height: "12.875rem",
+          top: "6rem",
+          right: "-6rem",
+        }}
+      />
+
+      <img
+        alt="harold"
+        src={harold_src}
+        style={{
+          position: "absolute",
+          width: "20rem",
+          height: "20rem",
+          bottom: "-8rem",
+          right: 0,
+        }}
+      />
+    </Box>
+  );
+
   return (
     <Box
       style={{
@@ -96,6 +156,7 @@ const Survey_complete: FC<Survey_complete> = ({ compatibility }) => {
       {score_display}
       {action_message}
       {action_buttons}
+      {image_backgrounds}
     </Box>
   );
 };

@@ -4,8 +4,7 @@ import { Survey } from "survey-react-ui";
 import survey_styles from "survey-core/defaultV2.min.css";
 import type { LinksFunction } from "@remix-run/node";
 import { Box, styled, useTheme } from "@mui/material";
-import { useState } from "react";
-import Survey_complete from "~/components/Survey_complete";
+import { useNavigate } from "@remix-run/react";
 
 export const links: LinksFunction = () => [
   {
@@ -18,15 +17,13 @@ const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 const MAX_SCORE = 20;
 
 export default function Home_page() {
-  const [compatibility, set_compatibility] = useState<number | undefined>(
-    undefined
-  );
+  const navigate = useNavigate();
 
   const survey = new Model(modal_data);
   survey.onComplete.add((sender) => {
     const score = calculate_score(sender.data.results);
 
-    set_compatibility(score);
+    navigate(`completed?score=${score}`);
   });
 
   const theme = useTheme();
@@ -48,10 +45,7 @@ export default function Home_page() {
           scrollbarWidth: "thin",
         }}
       >
-        {compatibility === undefined && <Survey model={survey} />}
-        {compatibility !== undefined && (
-          <Survey_complete compatibility={compatibility} />
-        )}
+        <Survey model={survey} />
       </Box>
     </Box>
   );
