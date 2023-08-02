@@ -1,4 +1,11 @@
-import { Box, ImageList, ImageListItem, styled, useTheme } from "@mui/material";
+import {
+  Box,
+  ImageList,
+  ImageListItem,
+  styled,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import type { LoaderFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { image_list } from "~/utils/images.server";
@@ -13,11 +20,14 @@ const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 export default function IndexRoute() {
   const image_list = useLoaderData<string[]>();
   const theme = useTheme();
+  const is_above_sm_breakpoint = useMediaQuery(theme.breakpoints.up("sm"));
 
+  const max_height_limit = is_above_sm_breakpoint ? 100 : 5;
+  const min_height_limit = is_above_sm_breakpoint ? 30 : 15;
   return (
     <Box
       style={{
-        backgroundColor: theme.palette.accent.main,
+        backgroundColor: theme.palette.primary.dark,
         height: "100%",
         overflowY: "hidden",
       }}
@@ -41,6 +51,14 @@ export default function IndexRoute() {
           {image_list.map((file_path) => (
             <ImageListItem key={file_path}>
               <img
+                style={{
+                  borderRadius: "10rem",
+                  height: `${
+                    Math.floor(Math.random() * max_height_limit) +
+                    Math.floor(Math.random() + 0.3 * min_height_limit) +
+                    7
+                  }rem`,
+                }}
                 src={`${file_path}?w=248&fit=crop&auto=format`}
                 srcSet={`${file_path}?w=248&fit=crop&auto=format&dpr=2 2x`}
                 alt={file_path}
