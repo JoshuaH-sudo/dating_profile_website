@@ -1,13 +1,12 @@
 import { Instagram } from "@mui/icons-material";
 import { Box, Button, Typography, useTheme } from "@mui/material";
 import type { FC } from "react";
-
+import CountUp from "react-countup";
 interface Survey_complete {
   compatibility: number;
 }
 const Survey_complete: FC<Survey_complete> = ({ compatibility }) => {
   const theme = useTheme();
-
   const score_display = (
     <Box>
       <Typography variant="h4" textAlign="left">
@@ -28,7 +27,7 @@ const Survey_complete: FC<Survey_complete> = ({ compatibility }) => {
         }}
       >
         <Typography variant="h2" color="white" textAlign="center">
-          {compatibility}%
+          <CountUp end={compatibility} duration={2} />%
         </Typography>
       </Box>
     </Box>
