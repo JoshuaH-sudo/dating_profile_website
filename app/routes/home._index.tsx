@@ -39,7 +39,6 @@ export default function Index_route() {
             flexGrow: "1",
             position: "relative",
             height: "100%",
-            backgroundColor: "#fe70c0",
           }}
         >
           <Intro />

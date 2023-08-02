@@ -1,5 +1,6 @@
 import { Instagram } from "@mui/icons-material";
-import { Box, Button, Typography, useTheme } from "@mui/material";
+import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
+import { Link } from "@remix-run/react";
 import type { FC } from "react";
 import CountUp from "react-countup";
 interface Survey_complete {
@@ -52,24 +53,32 @@ const Survey_complete: FC<Survey_complete> = ({ compatibility }) => {
         alignItems: "center",
       }}
     >
-      <Instagram
-        style={{
-          height: "5rem",
-          width: "5rem",
-        }}
-      />
-      <Button
-        style={{
-          width: "15rem",
-          height: "5rem",
-          backgroundColor: theme.palette.secondary.light,
-        }}
-        variant="contained"
+      <IconButton
+        style={{ padding: 0 }}
+        onClick={() => window.open("https://www.instagram.com/yeet_110100100/")}
       >
-        <Typography variant="h4" textAlign="center">
-          Meetup 📆
-        </Typography>
-      </Button>
+        <Instagram
+          style={{
+            height: "5rem",
+            width: "5rem",
+          }}
+        />
+      </IconButton>
+
+      <Link to="meetup">
+        <Button
+          style={{
+            width: "15rem",
+            height: "5rem",
+            backgroundColor: theme.palette.secondary.light,
+          }}
+          variant="contained"
+        >
+          <Typography variant="h4" textAlign="center">
+            Meetup 📆
+          </Typography>
+        </Button>
+      </Link>
     </Box>
   );
 

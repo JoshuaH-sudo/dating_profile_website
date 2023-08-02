@@ -23,8 +23,8 @@ const Header = () => {
           <Link to="/home/survey">
             <Chip label="Survey" variant="filled" clickable={true} />
           </Link>
-          <Link to="/home/date">
-            <Chip label="Date" variant="filled" clickable={true} />
+          <Link to="/home/meetup">
+            <Chip label="Meetup" variant="filled" clickable={true} />
           </Link>
         </Toolbar>
       </AppBar>
