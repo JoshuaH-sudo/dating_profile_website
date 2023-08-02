@@ -5,7 +5,6 @@ import Intro from "~/components/sections/Intro";
 import home_page_image from "~/images/layouts/home-background-image.png";
 
 export default function Index_route() {
-
   return (
     <>
       <Box
@@ -31,7 +30,7 @@ export default function Index_route() {
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             backgroundImage: `url('${home_page_image}')`,
-            filter: "blur(5px)"
+            filter: "blur(5px)",
           }}
         />
         <Box
@@ -40,6 +39,7 @@ export default function Index_route() {
             flexGrow: "1",
             position: "relative",
             height: "100%",
+            backgroundColor: "#fe70c0",
           }}
         >
           <Intro />

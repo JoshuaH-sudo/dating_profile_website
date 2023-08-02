@@ -9,14 +9,11 @@ const Intro = () => {
     <Box
       data-cy="intro-box"
       style={{
-        margin: "auto",
         display: "flex",
         height: "100%",
-        width: "347px",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        position: "relative",
       }}
     >
       <Typography

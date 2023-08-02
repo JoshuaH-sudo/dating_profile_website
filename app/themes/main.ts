@@ -66,7 +66,7 @@ const theme: ThemeOptions = {
     },
     h5: {
       fontFamily: "Space Grotesk",
-      fontSize: "18",
+      fontSize: "18pt",
       fontStyle: "normal",
       fontWeight: 700,
       lineHeight: "normal",

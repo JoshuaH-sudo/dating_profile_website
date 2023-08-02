@@ -18,29 +18,12 @@ const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 const MAX_SCORE = 20;
 
 export default function Home_page() {
-  const [compatibility, set_compatibility] = useState<number | undefined>(undefined);
-
-  type Tally = {
-    [item: string]: number;
-  };
-  const calculate_score = (results: Tally) => {
-    const total = Object.values(results).reduce(
-      (previous, current) => previous + current,
-      0
-    );
-
-    //https://stackoverflow.com/questions/23759782/javascript-percentage-difference-between-two-values
-    const difference =
-      100 * Math.abs((MAX_SCORE - total) / ((MAX_SCORE + total) / 2));
-
-    const score = 100 - Math.round(difference);
-
-    return score;
-  };
+  const [compatibility, set_compatibility] = useState<number | undefined>(
+    90//undefined
+  );
 
   const survey = new Model(modal_data);
   survey.onComplete.add((sender, options) => {
-
     const score = calculate_score(sender.data.results);
 
     set_compatibility(score);
@@ -65,12 +48,32 @@ export default function Home_page() {
           scrollbarWidth: "thin",
         }}
       >
-        {!compatibility && <Survey model={survey} />}
-        { compatibility !== undefined && <Survey_complete compatibility={compatibility} />}
+        {compatibility === undefined && <Survey model={survey} />}
+        {compatibility !== undefined && (
+          <Survey_complete compatibility={compatibility} />
+        )}
       </Box>
     </Box>
   );
 }
+
+type Tally = {
+  [item: string]: number;
+};
+const calculate_score = (results: Tally) => {
+  const total = Object.values(results).reduce(
+    (previous, current) => previous + current,
+    0
+  );
+
+  //https://stackoverflow.com/questions/23759782/javascript-percentage-difference-between-two-values
+  const difference =
+    100 * Math.abs((MAX_SCORE - total) / ((MAX_SCORE + total) / 2));
+
+  const score = 100 - Math.round(difference);
+
+  return score;
+};
 
 const modal_data = {
   elements: [
@@ -119,7 +122,7 @@ const modal_data = {
         },
       ],
       alternateRows: true,
-      // isAllRowRequired: true,
+      isAllRowRequired: true,
     },
   ],
   showQuestionNumbers: "off",
