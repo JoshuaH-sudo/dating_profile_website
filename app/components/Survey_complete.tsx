@@ -8,6 +8,7 @@ interface Survey_complete {
 }
 const Survey_complete: FC<Survey_complete> = ({ compatibility }) => {
   const theme = useTheme();
+
   const score_display = (
     <Box>
       <Typography variant="h4" textAlign="left">
@@ -65,7 +66,7 @@ const Survey_complete: FC<Survey_complete> = ({ compatibility }) => {
         />
       </IconButton>
 
-      <Link to="meetup">
+      <Link to="/home/meetup">
         <Button
           style={{
             width: "15rem",
