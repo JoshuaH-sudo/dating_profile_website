@@ -12,7 +12,7 @@ const Divider = () => {
         zIndex: 1000,
         width: "100vw",
         flexGrow: 1,
-        backgroundColor: theme.palette.primary.light,
+        backgroundColor: theme.palette.primary.main,
       }}
     >
       <Grid

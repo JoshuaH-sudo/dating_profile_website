@@ -3,8 +3,13 @@ import About from "~/components/sections/About";
 import Divider from "~/components/Divider";
 import Intro from "~/components/sections/Intro";
 import home_page_image from "~/images/layouts/home-background-image.png";
+import { useRef } from "react";
 
 export default function Index_route() {
+  const scroll_element_ref = useRef<Element>(null);
+
+  const execute_scroll = () => scroll_element_ref?.current?.scrollIntoView({ behavior: "smooth"});
+
   return (
     <>
       <Box
@@ -41,11 +46,11 @@ export default function Index_route() {
             height: "100%",
           }}
         >
-          <Intro />
+          <Intro execute_scroll={execute_scroll}/>
         </Box>
         <Divider />
       </Box>
-      <About />
+      <About scroll_element_ref={scroll_element_ref} />
     </>
   );
 }

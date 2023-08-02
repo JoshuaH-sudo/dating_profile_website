@@ -1,10 +1,33 @@
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, Button, Typography, useTheme } from "@mui/material";
+import { FC, useRef } from "react";
 import head_shot from "~/images/decorations/headshot.jpg";
 import soyface_overlay_src from "~/images/decorations/soyface-wojak.png";
 import will_smith_presents_src from "~/images/decorations/will-smith-presents.png";
 
-const Intro = () => {
+interface Intro_props {
+  execute_scroll: () => void;
+}
+const Intro: FC<Intro_props> = ({ execute_scroll }) => {
   const theme = useTheme();
+
+  const about_button = (
+    <Box
+      style={{
+        paddingTop: "5rem",
+      }}
+    >
+      <Button
+        variant="contained"
+        style={{
+          backgroundColor: theme.palette.primary.light,
+        }}
+        onClick={execute_scroll}
+      >
+        <Typography variant="h3">Learn More</Typography>
+      </Button>
+    </Box>
+  );
+
   return (
     <Box
       data-cy="intro-box"
@@ -47,6 +70,7 @@ const Intro = () => {
         {soyface_overlay_image}
         {will_smith_presents_image}
       </Box>
+      {about_button}
     </Box>
   );
 };
