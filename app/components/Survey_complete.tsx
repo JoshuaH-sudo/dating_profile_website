@@ -114,6 +114,8 @@ const Survey_complete: FC<Survey_complete> = ({ compatibility }) => {
           height: "12.875rem",
           top: "2rem",
           left: "-5.7rem",
+          minWidth: "30vw",
+          minHeight: "30vw",
         }}
       />
 
@@ -126,6 +128,8 @@ const Survey_complete: FC<Survey_complete> = ({ compatibility }) => {
           height: "12.875rem",
           top: "6rem",
           right: "-6rem",
+          minWidth: "30vw",
+          minHeight: "30vw",
         }}
       />
 
@@ -138,6 +142,8 @@ const Survey_complete: FC<Survey_complete> = ({ compatibility }) => {
           height: "20rem",
           bottom: "-8rem",
           right: 0,
+          minWidth: "30vw",
+          minHeight: "30vw",
         }}
       />
     </Box>
