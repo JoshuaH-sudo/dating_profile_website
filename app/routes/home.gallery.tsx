@@ -1,30 +1,17 @@
 import { Box, ImageList, ImageListItem, styled, useTheme } from "@mui/material";
 import type { LoaderFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
-import { readdir } from "fs/promises";
-
-interface Image_tile {
-  file_name: string;
-}
+import { image_list } from "~/utils/images.server";
 
 export const loader: LoaderFunction = async () => {
-  const file_name_list = await readdir("./app/images/me");
+  const random_image_list = image_list.sort(() => 0.5 - Math.random());
 
-  const image_map: Image_tile[] = file_name_list
-    .map((file_name) => {
-      return {
-        file_name,
-      };
-    })
-    // Add some randomness to the images
-    .sort(() => 0.5 - Math.random());
-
-  return image_map;
+  return random_image_list;
 };
 
 const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 export default function IndexRoute() {
-  const image_list = useLoaderData<Image_tile[]>();
+  const image_list = useLoaderData<string[]>();
   const theme = useTheme();
 
   return (
@@ -51,12 +38,12 @@ export default function IndexRoute() {
         }}
       >
         <ImageList variant="masonry" cols={2} gap={4}>
-          {image_list.map(({ file_name }) => (
-            <ImageListItem key={file_name}>
+          {image_list.map((file_path) => (
+            <ImageListItem key={file_path}>
               <img
-                src={`/images/${file_name}?w=248&fit=crop&auto=format`}
-                srcSet={`/images/${file_name}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                alt={file_name}
+                src={`${file_path}?w=248&fit=crop&auto=format`}
+                srcSet={`${file_path}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                alt={file_path}
                 loading="lazy"
               />
             </ImageListItem>

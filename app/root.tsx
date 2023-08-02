@@ -3,7 +3,7 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { Container, ThemeProvider } from "@mui/material";
-import type { LinksFunction, V2_MetaFunction } from "@remix-run/node";
+import type { V2_MetaFunction } from "@remix-run/node";
 import {
   Links,
   LiveReload,
