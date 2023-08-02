@@ -19,11 +19,11 @@ const MAX_SCORE = 20;
 
 export default function Home_page() {
   const [compatibility, set_compatibility] = useState<number | undefined>(
-    90//undefined
+    undefined
   );
 
   const survey = new Model(modal_data);
-  survey.onComplete.add((sender, options) => {
+  survey.onComplete.add((sender) => {
     const score = calculate_score(sender.data.results);
 
     set_compatibility(score);
