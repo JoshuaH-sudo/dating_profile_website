@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from "@remix-run/react";
 import { motion } from "framer-motion";
-import Header from "~/components/Header";
+import Header from "~/components/UI/Header";
 
 export default function Home_page_layout() {
   function template() {

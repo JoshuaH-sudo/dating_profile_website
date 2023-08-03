@@ -1,5 +1,5 @@
 import { Box, styled, useTheme } from "@mui/material";
-import { Description_list } from "../Description_list";
+import { Description_list } from "../UI/Description_list";
 import me_image_src from "~/images/decorations/headshot.jpg";
 import type { FC, RefObject } from "react";
 
@@ -24,19 +24,34 @@ const About: FC<About_props> = ({ scroll_element_ref }) => {
       <Offset style={{ backgroundColor: theme.palette.primary.main }} />
       <Description_list>
         <Description_list.Item
-          title="Heading 1"
+          title="Who Am I"
           image_side="left"
           image_src={me_image_src}
         >
-          abcdefg
+          <Description_list.Text_display>
+            I am an aussie 🇦🇺 living in Berlin 🇩🇪.
+          </Description_list.Text_display>
+
+          <Description_list.Text_display>
+            I am a software developer that came to Europe looking for adventure
+            and to change my environment and experience mew things.
+          </Description_list.Text_display>
         </Description_list.Item>
+
         <Description_list.Item
-          title="Heading 2"
+          title="Hobbies"
           image_side="right"
           image_src={me_image_src}
         >
-          abcdefg
+          <Description_list.Text_display>
+            - Programming
+            - Games
+            - Painting
+            - Languages
+            - Travel
+          </Description_list.Text_display>
         </Description_list.Item>
+
         <Description_list.Item
           title="Heading 3"
           image_side="left"

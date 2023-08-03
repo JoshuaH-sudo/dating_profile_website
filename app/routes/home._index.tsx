@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import About from "~/components/sections/About";
-import Divider from "~/components/Divider";
+import Divider from "~/components/UI/Divider";
 import Intro from "~/components/sections/Intro";
 import home_page_image from "~/images/layouts/home-background-image.png";
 import { useRef } from "react";
