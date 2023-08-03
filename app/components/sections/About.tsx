@@ -1,9 +1,8 @@
 import {
   Box,
+  Link,
   List,
   ListItem,
-  ListItemIcon,
-  ListItemText,
   Typography,
   styled,
   useTheme,
@@ -96,11 +95,23 @@ const About: FC<About_props> = ({ scroll_element_ref }) => {
         </Description_list.Item>
 
         <Description_list.Item
-          title="Heading 3"
+          title="Where Next?"
           image_side="left"
           image_src={me_image_src}
         >
-          abcdefg
+          <Description_list.Text_display>
+            By selecting from the header buttons, You can see more of my photos
+            in the "gallery", take a "survey" to see how compatible we are and
+            then you can book a time to "meetup".
+          </Description_list.Text_display>
+
+          <Description_list.Text_display>
+            You can also message me through my <Link href="#https://www.instagram.com/yeet_110100100/">Instagram.</Link>
+          </Description_list.Text_display>
+
+          <Description_list.Text_display>
+            I look forward to getting to know you.
+          </Description_list.Text_display>
         </Description_list.Item>
       </Description_list>
     </Box>

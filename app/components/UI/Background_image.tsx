@@ -15,6 +15,7 @@ const Background_image: FC<Background_image_props> = ({
 }) => {
   return (
     <img
+      alt="background"
       src={image_src}
       style={{
         position: "absolute",
