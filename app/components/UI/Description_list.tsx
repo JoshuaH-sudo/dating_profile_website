@@ -81,13 +81,7 @@ const Item: FC<Item_props> = ({ image_side, image_src, title, children }) => {
         >
           {title}
         </Typography>
-        <Typography
-          variant={is_above_sm_breakpoint ? "h2" : "h3"}
-          color="white"
-          fontStyle="Lexend Deca"
-        >
-          {children}
-        </Typography>
+        {children}
       </Box>
 
       {image_side === "right" && image_display}
@@ -96,7 +90,7 @@ const Item: FC<Item_props> = ({ image_side, image_src, title, children }) => {
 };
 
 interface Text_props extends PropsWithChildren {
-  style?: CSSProperties | undefined
+  style?: CSSProperties | undefined;
 }
 
 export const Text_display: FC<Text_props> = ({ style, children }) => {
@@ -105,10 +99,14 @@ export const Text_display: FC<Text_props> = ({ style, children }) => {
 
   return (
     <Typography
-      variant={is_above_sm_breakpoint ? "h2" : "h3"}
+      variant={is_above_sm_breakpoint ? "h3" : "h4"}
       color="white"
       fontStyle="Lexend Deca"
-      style={style}
+      style={{
+        paddingTop: "3rem",
+        paddingBottom: "3rem",
+        ...style,
+      }}
     >
       {children}
     </Typography>
@@ -117,5 +115,5 @@ export const Text_display: FC<Text_props> = ({ style, children }) => {
 
 export const Description_list = Object.assign(List, {
   Item,
-  Text_display
+  Text_display,
 });
