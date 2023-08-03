@@ -1,6 +1,9 @@
 import { Box, Link, List, ListItem, styled, useTheme } from "@mui/material";
 import { Description_list } from "../UI/Description_list";
-import me_image_src from "~/images/decorations/headshot.jpg";
+import black_white_me from "~/images/me/image_3.jpg";
+import circle_me from "~/images/me/image_8.jpg";
+import cool_me from "~/images/me/image_11.jpg";
+
 import type { FC, RefObject } from "react";
 import { Link as Remix_link } from "@remix-run/react";
 
@@ -27,7 +30,7 @@ const About: FC<About_props> = ({ scroll_element_ref }) => {
         <Description_list.Item
           title="Who Am I"
           image_side="left"
-          image_src={me_image_src}
+          image_src={black_white_me}
         >
           <Description_list.Text_display>
             I am an aussie 🇦🇺 software developer living in Berlin 🇩🇪.
@@ -46,7 +49,7 @@ const About: FC<About_props> = ({ scroll_element_ref }) => {
         <Description_list.Item
           title="Hobbies and Interests"
           image_side="right"
-          image_src={me_image_src}
+          image_src={circle_me}
         >
           <List>
             <ListItem>
@@ -90,29 +93,20 @@ const About: FC<About_props> = ({ scroll_element_ref }) => {
         <Description_list.Item
           title="Where Next?"
           image_side="left"
-          image_src={me_image_src}
+          image_src={cool_me}
         >
           <Description_list.Text_display>
             You can see more of my photos in the{" "}
-            <Remix_link to="gallery">
-              <Link>gallery</Link>
-            </Remix_link>
+            <Remix_link to="gallery">gallery</Remix_link>
           </Description_list.Text_display>
 
           <Description_list.Text_display>
-            Take a{" "}
-            <Remix_link to="survey">
-              <Link>survey</Link>
-            </Remix_link>{" "}
-            to see how compatible we are.
+            Take a <Remix_link to="survey">survey</Remix_link> to see how
+            compatible we are.
           </Description_list.Text_display>
 
           <Description_list.Text_display>
-            You can book a time to{" "}
-            <Remix_link to="meetup">
-              <Link>meetup</Link>
-            </Remix_link>
-            .
+            You can book a time to <Remix_link to="meetup">meetup</Remix_link>.
           </Description_list.Text_display>
 
           <Description_list.Text_display>
