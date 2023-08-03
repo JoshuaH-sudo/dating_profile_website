@@ -1,15 +1,8 @@
-import {
-  Box,
-  Link,
-  List,
-  ListItem,
-  Typography,
-  styled,
-  useTheme,
-} from "@mui/material";
+import { Box, Link, List, ListItem, styled, useTheme } from "@mui/material";
 import { Description_list } from "../UI/Description_list";
 import me_image_src from "~/images/decorations/headshot.jpg";
 import type { FC, RefObject } from "react";
+import { Link as Remix_link } from "@remix-run/react";
 
 const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 
@@ -57,39 +50,39 @@ const About: FC<About_props> = ({ scroll_element_ref }) => {
         >
           <List>
             <ListItem>
-              <Typography variant="h2" color="white">
+              <Description_list.Text_display>
                 💻 Programming
-              </Typography>
+              </Description_list.Text_display>
             </ListItem>
 
             <ListItem>
-              <Typography variant="h2" color="white">
+              <Description_list.Text_display>
                 🎮 Games
-              </Typography>
+              </Description_list.Text_display>
             </ListItem>
 
             <ListItem>
-              <Typography variant="h2" color="white">
+              <Description_list.Text_display>
                 🛫 Travel
-              </Typography>
+              </Description_list.Text_display>
             </ListItem>
 
             <ListItem>
-              <Typography variant="h2" color="white">
+              <Description_list.Text_display>
                 🌏 Languages
-              </Typography>
+              </Description_list.Text_display>
             </ListItem>
 
             <ListItem>
-              <Typography variant="h2" color="white">
+              <Description_list.Text_display>
                 🖌 Painting
-              </Typography>
+              </Description_list.Text_display>
             </ListItem>
 
             <ListItem>
-              <Typography variant="h2" color="white">
+              <Description_list.Text_display>
                 🥋 Martial Arts
-              </Typography>
+              </Description_list.Text_display>
             </ListItem>
           </List>
         </Description_list.Item>
@@ -100,13 +93,36 @@ const About: FC<About_props> = ({ scroll_element_ref }) => {
           image_src={me_image_src}
         >
           <Description_list.Text_display>
-            By selecting from the header buttons, You can see more of my photos
-            in the "gallery", take a "survey" to see how compatible we are and
-            then you can book a time to "meetup".
+            You can see more of my photos in the{" "}
+            <Remix_link to="gallery">
+              <Link>gallery</Link>
+            </Remix_link>
           </Description_list.Text_display>
 
           <Description_list.Text_display>
-            You can also message me through my <Link href="#https://www.instagram.com/yeet_110100100/">Instagram.</Link>
+            Take a{" "}
+            <Remix_link to="survey">
+              <Link>survey</Link>
+            </Remix_link>{" "}
+            to see how compatible we are.
+          </Description_list.Text_display>
+
+          <Description_list.Text_display>
+            You can book a time to{" "}
+            <Remix_link to="meetup">
+              <Link>meetup</Link>
+            </Remix_link>
+            .
+          </Description_list.Text_display>
+
+          <Description_list.Text_display>
+            You can also message me through my{" "}
+            <Link
+              href="https://www.instagram.com/yeet_110100100/"
+              target="_blank"
+            >
+              Instagram.
+            </Link>
           </Description_list.Text_display>
 
           <Description_list.Text_display>

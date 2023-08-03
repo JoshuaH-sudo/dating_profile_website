@@ -13,7 +13,7 @@ const List: FC<PropsWithChildren> = ({ children }) => {
     <Stack
       spacing={{ xs: 2, sm: 2, md: 4 }}
       divider={<Divider orientation="horizontal" flexItem />}
-      direction={"column"}
+      direction="column"
       padding="1rem"
     >
       {children}
@@ -89,11 +89,11 @@ const Item: FC<Item_props> = ({ image_side, image_src, title, children }) => {
   );
 };
 
-interface Text_props extends PropsWithChildren {
+interface Text_display_props extends PropsWithChildren {
   style?: CSSProperties | undefined;
 }
 
-export const Text_display: FC<Text_props> = ({ style, children }) => {
+export const Text_display: FC<Text_display_props> = ({ style, children }) => {
   const theme = useTheme();
   const is_above_sm_breakpoint = useMediaQuery(theme.breakpoints.up("sm"));
 
@@ -103,8 +103,8 @@ export const Text_display: FC<Text_props> = ({ style, children }) => {
       color="white"
       fontStyle="Lexend Deca"
       style={{
-        paddingTop: "3rem",
-        paddingBottom: "3rem",
+        paddingTop: "1rem",
+        paddingBottom: "1rem",
         ...style,
       }}
     >
