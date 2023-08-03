@@ -1,4 +1,4 @@
-import { AppBar, Chip, Toolbar } from "@mui/material";
+import { AppBar, Button, Toolbar } from "@mui/material";
 import { Link } from "@remix-run/react";
 
 const Header = () => {
@@ -10,21 +10,29 @@ const Header = () => {
         style={{
           left: 0,
           width: "100vw",
-          boxShadow: "revert"
+          boxShadow: "revert",
         }}
       >
         <Toolbar sx={{ justifyContent: "space-around" }}>
           <Link to="/home">
-            <Chip label="Home" variant="filled" clickable={true} />
+            <Button variant="contained" size="large" style={{ width: "20vw" }}>
+              Home
+            </Button>
           </Link>
           <Link to="/home/gallery">
-            <Chip label="Gallery" variant="filled" clickable={true} />
+            <Button variant="contained" size="large" style={{ width: "20vw" }}>
+              Gallery
+            </Button>
           </Link>
           <Link to="/home/survey">
-            <Chip label="Survey" variant="filled" clickable={true} />
+            <Button variant="contained" size="large" style={{ width: "20vw" }}>
+              Survey
+            </Button>
           </Link>
           <Link to="/home/meetup">
-            <Chip label="Meetup" variant="filled" clickable={true} />
+            <Button variant="contained" size="large" style={{ width: "20vw" }}>
+              Meetup
+            </Button>
           </Link>
         </Toolbar>
       </AppBar>
