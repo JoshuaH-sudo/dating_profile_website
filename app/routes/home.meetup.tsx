@@ -1,11 +1,11 @@
-import { styled, useTheme } from "@mui/material";
+import { Box, styled, useTheme } from "@mui/material";
 
 const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 
 export default function Meetup_page() {
   const theme = useTheme();
   return (
-    <>
+    <Box style={{ overflow: "hidden", height: "100%" }}>
       <Offset
         style={{
           backgroundColor: theme.palette.secondary.light,
@@ -19,6 +19,6 @@ export default function Meetup_page() {
         height="600"
         frameborder="0"
       />
-    </>
+    </Box>
   );
 }
