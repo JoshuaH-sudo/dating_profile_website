@@ -1,9 +1,17 @@
-import { Box, Button, Typography, useMediaQuery, useTheme } from "@mui/material";
+import {
+  Box,
+  Button,
+  Typography,
+  styled,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import type { FC } from "react";
 import head_shot from "~/images/decorations/headshot.jpg";
 import soyface_overlay_src from "~/images/decorations/soyface-wojak.png";
 import will_smith_presents_src from "~/images/decorations/will-smith-presents.png";
 
+const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 interface Intro_props {
   execute_scroll: () => void;
 }
@@ -29,22 +37,22 @@ const Intro: FC<Intro_props> = ({ execute_scroll }) => {
     </Box>
   );
 
-const soyface_overlay_image = (
-  <img
-    data-cy="soyface-overlay"
-    style={{
-      height: "50vw",
-      width: "100vw",
-      position: "absolute",
-      minHeight: "20rem",
-      minWidth: "30rem",
-      flexShrink: 0,
-      bottom: is_above_sm_breakpoint ? undefined : "6rem"
-    }}
-    src={soyface_overlay_src}
-    alt="soyface overlay"
-  />
-);
+  const soyface_overlay_image = (
+    <img
+      data-cy="soyface-overlay"
+      style={{
+        height: "50vw",
+        width: "100vw",
+        position: "absolute",
+        minHeight: "20rem",
+        minWidth: "30rem",
+        flexShrink: 0,
+        bottom: is_above_sm_breakpoint ? undefined : "6rem",
+      }}
+      src={soyface_overlay_src}
+      alt="soyface overlay"
+    />
+  );
   return (
     <Box
       data-cy="intro-box"
@@ -56,9 +64,10 @@ const soyface_overlay_image = (
         alignItems: "center",
       }}
     >
+      <Offset />
       <Typography
         data-cy="title"
-        sx={{ typography: is_above_sm_breakpoint ? "h1" : "h3"}}
+        sx={{ typography: is_above_sm_breakpoint ? "h1" : "h3" }}
         color={theme.palette.accent.light}
       >
         Joshua Hoban
@@ -83,7 +92,7 @@ const soyface_overlay_image = (
             minHeight: "20vw",
             flexShrink: 0,
             borderRadius: "2rem",
-            filter: "drop-shadow(rgba(0, 0, 0, 0.25) 0px 4px 4px)"
+            filter: "drop-shadow(rgba(0, 0, 0, 0.25) 0px 4px 4px)",
           }}
         />
         {will_smith_presents_image}
