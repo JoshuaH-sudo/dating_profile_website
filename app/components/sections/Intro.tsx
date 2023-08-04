@@ -20,11 +20,7 @@ const Intro: FC<Intro_props> = ({ execute_scroll }) => {
   const is_above_sm_breakpoint = useMediaQuery(theme.breakpoints.up("sm"));
 
   const about_button = (
-    <Box
-      style={{
-        paddingTop: "5rem",
-      }}
-    >
+    <Box>
       <Button
         variant="contained"
         style={{
@@ -41,18 +37,19 @@ const Intro: FC<Intro_props> = ({ execute_scroll }) => {
     <img
       data-cy="soyface-overlay"
       style={{
-        height: "50vw",
+        height: "40vw",
         width: "100vw",
         position: "absolute",
         minHeight: "20rem",
         minWidth: "30rem",
         flexShrink: 0,
-        bottom: is_above_sm_breakpoint ? undefined : "6rem",
+        bottom: is_above_sm_breakpoint ? "-5rem" : "6rem",
       }}
       src={soyface_overlay_src}
       alt="soyface overlay"
     />
   );
+
   return (
     <Box
       data-cy="intro-box"

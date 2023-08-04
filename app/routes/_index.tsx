@@ -11,13 +11,6 @@ export default function Splash_page() {
       set_show_button(true);
     }, 7000);
 
-    // const video_element = document.getElementById(
-    //   "gigachad-video"
-    // ) as HTMLVideoElement;
-    // if (video_element) {
-    //   video_element.currentTime = 5;
-    // }
-
     return () => {
       clearTimeout(timeout);
     };
@@ -50,7 +43,7 @@ export default function Splash_page() {
         position="relative"
         sx={{ minHeight: "100vh" }}
       >
-        <Fade in={!show_button} timeout={{ enter: 3000, exit: 250}}>
+        <Fade in={!show_button} timeout={{ enter: 3000, exit: 250 }}>
           <Typography variant="h2" color="white" textAlign="center">
             Are.
           </Typography>
@@ -60,7 +53,7 @@ export default function Splash_page() {
             You.
           </Typography>
         </Fade>
-        <Fade in={!show_button} timeout={{ enter: 7500, exit: 250}}>
+        <Fade in={!show_button} timeout={{ enter: 7500, exit: 250 }}>
           <Typography variant="h2" color="white" textAlign="center">
             Ready?
           </Typography>
