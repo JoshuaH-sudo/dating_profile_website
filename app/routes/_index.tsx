@@ -16,6 +16,14 @@ export default function Splash_page() {
     };
   }, []);
 
+  const on_screen_click = () => {
+    const video_element = document.querySelector("video");
+    if (video_element) {
+      video_element.play();
+      video_element.muted = false;
+      video_element.volume = 0.2;
+    }
+  };
   return (
     <>
       <video
@@ -28,13 +36,15 @@ export default function Splash_page() {
           objectFit: "cover",
         }}
         disablePictureInPicture
-        autoPlay
+        autoPlay={true}
+        muted={true}
         loop
         id="gigachad-video"
       >
         <source src={gigachad_video} type="video/mp4" />
       </video>
       <Grid
+        onClick={on_screen_click}
         container
         spacing={0}
         direction="column"
@@ -81,8 +91,8 @@ export default function Splash_page() {
 
         <Box style={{ position: "absolute", bottom: 0 }}>
           <Fade in={!show_button} timeout={3000}>
-            <Typography variant="h4" color="white">
-              Sound On 🔊
+            <Typography variant="h4" color="white" textAlign="center">
+              Click screen to turn sound on! 🔊
             </Typography>
           </Fade>
         </Box>
