@@ -36,7 +36,7 @@ const Item: FC<Item_props> = ({ image_side, image_src, title, children }) => {
     ? {
         position: "absolute",
         filter:
-          "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) brightness(40%) blur(1px)",
+          "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) brightness(20%) blur(1px)",
         borderRadius: "10px",
         objectFit: "cover",
       }
