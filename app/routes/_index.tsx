@@ -1,4 +1,4 @@
-import { Box, Button, Fade, Grid, Typography } from "@mui/material";
+import { Button, Fade, Grid, Typography } from "@mui/material";
 import { Link } from "@remix-run/react";
 import { useEffect, useState } from "react";
 import gigachad_video from "~/assets/videos/GIGACHAD.mp4";
@@ -87,15 +87,13 @@ export default function Splash_page() {
               </Button>
             </Link>
           </Fade>
-        </Grid>
 
-        <Box style={{ position: "absolute", bottom: 0 }}>
           <Fade in={!show_button} timeout={3000}>
             <Typography variant="h4" color="white" textAlign="center">
               Click screen to turn sound on! 🔊
             </Typography>
           </Fade>
-        </Box>
+        </Grid>
       </Grid>
     </>
   );

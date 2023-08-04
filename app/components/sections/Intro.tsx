@@ -2,7 +2,6 @@ import {
   Box,
   Button,
   Typography,
-  styled,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
@@ -11,7 +10,6 @@ import head_shot from "~/images/decorations/headshot.jpg";
 import soyface_overlay_src from "~/images/decorations/soyface-wojak.png";
 import will_smith_presents_src from "~/images/decorations/will-smith-presents.png";
 
-const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 interface Intro_props {
   execute_scroll: () => void;
 }
@@ -61,7 +59,6 @@ const Intro: FC<Intro_props> = ({ execute_scroll }) => {
         alignItems: "center",
       }}
     >
-      <Offset />
       <Typography
         data-cy="title"
         sx={{ typography: is_above_sm_breakpoint ? "h1" : "h3" }}
