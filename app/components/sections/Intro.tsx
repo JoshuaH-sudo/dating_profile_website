@@ -1,5 +1,5 @@
-import { Box, Button, Typography, useTheme } from "@mui/material";
-import { FC, useRef } from "react";
+import { Box, Button, Typography, useMediaQuery, useTheme } from "@mui/material";
+import type { FC } from "react";
 import head_shot from "~/images/decorations/headshot.jpg";
 import soyface_overlay_src from "~/images/decorations/soyface-wojak.png";
 import will_smith_presents_src from "~/images/decorations/will-smith-presents.png";
@@ -9,6 +9,7 @@ interface Intro_props {
 }
 const Intro: FC<Intro_props> = ({ execute_scroll }) => {
   const theme = useTheme();
+  const is_above_sm_breakpoint = useMediaQuery(theme.breakpoints.up("sm"));
 
   const about_button = (
     <Box
@@ -28,6 +29,22 @@ const Intro: FC<Intro_props> = ({ execute_scroll }) => {
     </Box>
   );
 
+const soyface_overlay_image = (
+  <img
+    data-cy="soyface-overlay"
+    style={{
+      height: "50vw",
+      width: "100vw",
+      position: "absolute",
+      minHeight: "20rem",
+      minWidth: "30rem",
+      flexShrink: 0,
+      bottom: is_above_sm_breakpoint ? undefined : "6rem"
+    }}
+    src={soyface_overlay_src}
+    alt="soyface overlay"
+  />
+);
   return (
     <Box
       data-cy="intro-box"
@@ -41,7 +58,7 @@ const Intro: FC<Intro_props> = ({ execute_scroll }) => {
     >
       <Typography
         data-cy="title"
-        variant="h3"
+        sx={{ typography: is_above_sm_breakpoint ? "h1" : "h3"}}
         color={theme.palette.accent.light}
       >
         Joshua Hoban
@@ -60,16 +77,18 @@ const Intro: FC<Intro_props> = ({ execute_scroll }) => {
           src={head_shot}
           alt="main_image"
           style={{
-            width: "181px",
-            height: "181px",
+            width: "15rem",
+            height: "15rem",
+            minWidth: "20vw",
+            minHeight: "20vw",
             flexShrink: 0,
-            borderRadius: "6.678px",
-            border: "2.003px solid #000",
+            borderRadius: "2rem",
+            filter: "drop-shadow(rgba(0, 0, 0, 0.25) 0px 4px 4px)"
           }}
         />
-        {soyface_overlay_image}
         {will_smith_presents_image}
       </Box>
+      {soyface_overlay_image}
       {about_button}
     </Box>
   );
@@ -98,22 +117,6 @@ const will_smith_presents_image = (
       alt="will-smith-presents"
     />
   </Box>
-);
-
-const soyface_overlay_image = (
-  <img
-    data-cy="soyface-overlay"
-    style={{
-      width: "378px",
-      height: "299px",
-      position: "absolute",
-      top: "2em",
-      left: "-53%",
-      flexShrink: 0,
-    }}
-    src={soyface_overlay_src}
-    alt="soyface overlay"
-  />
 );
 
 export default Intro;
