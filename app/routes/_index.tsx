@@ -34,6 +34,7 @@ export default function Splash_page() {
           height: "100vh",
           objectFit: "cover",
         }}
+        disablePictureInPicture
         autoPlay
         loop
         id="gigachad-video"
