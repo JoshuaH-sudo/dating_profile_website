@@ -17,7 +17,7 @@ export default function Meetup_page() {
         style={{ border: 0, height: "100%" }}
         width="100%"
         height="600"
-        frameborder="0"
+        frameBorder="0"
       />
     </Box>
   );

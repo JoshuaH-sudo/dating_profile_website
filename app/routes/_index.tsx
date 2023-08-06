@@ -1,4 +1,4 @@
-import { Box, Button, Fade, Grid, Stack, Typography } from "@mui/material";
+import { Box, Button, Fade, Stack, Typography } from "@mui/material";
 import { Link } from "@remix-run/react";
 import { useEffect, useState } from "react";
 import gigachad_video from "~/assets/videos/GIGACHAD.mp4";

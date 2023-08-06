@@ -16,9 +16,8 @@ import type { PropsWithChildren } from "react";
 import { main_theme } from "./themes/main";
 
 export const meta: V2_MetaFunction = () => {
-  return [{ title: "Joshy's Website" }];
+  return [{ title: "Joshy's Dating Profile" }];
 };
-
 
 function Document({ children, title }: PropsWithChildren<{ title?: string }>) {
   return (
