@@ -106,10 +106,6 @@ const About: FC<About_props> = ({ scroll_element_ref }) => {
           </Description_list.Text_display>
 
           <Description_list.Text_display>
-            You can book a time to <Remix_link to="meetup">meetup</Remix_link>.
-          </Description_list.Text_display>
-
-          <Description_list.Text_display>
             You can also message me through my{" "}
             <Link
               href="https://www.instagram.com/yeet_110100100/"

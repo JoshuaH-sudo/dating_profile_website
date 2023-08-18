@@ -64,7 +64,7 @@ const Intro: FC<Intro_props> = ({ execute_scroll }) => {
         sx={{ typography: is_above_sm_breakpoint ? "h1" : "h3" }}
         color={theme.palette.accent.light}
       >
-        Joshua Hoban
+        Joshua
       </Typography>
       <Typography data-cy="subtitle" variant="subtitle1" color="#FFF">
         "Yeet, Yoat, Yeetus"

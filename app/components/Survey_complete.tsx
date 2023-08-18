@@ -50,7 +50,7 @@ const Survey_complete: FC<Survey_complete> = ({ compatibility }) => {
         Wow we're match!!!🎉
       </Typography>
       <Typography variant="h5" color="white" textAlign="center">
-        Send a message on Instagram or lets meetup 😉
+        Send a message on Instagram 😉
       </Typography>
     </Box>
   );
@@ -75,21 +75,6 @@ const Survey_complete: FC<Survey_complete> = ({ compatibility }) => {
           }}
         />
       </IconButton>
-
-      <Link to="/home/meetup">
-        <Button
-          style={{
-            width: "15rem",
-            height: "5rem",
-            backgroundColor: theme.palette.secondary.light,
-          }}
-          variant="contained"
-        >
-          <Typography variant="h4" textAlign="center">
-            Meetup 📆
-          </Typography>
-        </Button>
-      </Link>
     </Box>
   );
 

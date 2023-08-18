@@ -29,11 +29,6 @@ const Header = () => {
               Survey
             </Button>
           </Link>
-          <Link to="/home/meetup">
-            <Button variant="contained" size="large" style={{ width: "20vw" }}>
-              Meetup
-            </Button>
-          </Link>
         </Toolbar>
       </AppBar>
     </>
